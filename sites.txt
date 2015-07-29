@@ -7,7 +7,7 @@ http://kotlinlang.org/docs/reference/control-flow.html
 http://kotlinlang.org/docs/reference/returns.html
 http://kotlinlang.org/docs/reference/classes.html
 http://kotlinlang.org/docs/reference/properties.html
-http://kotlinlang.org/docs/reference/traits.html
+http://kotlinlang.org/docs/reference/interfaces.html
 http://kotlinlang.org/docs/reference/visibility-modifiers.html
 http://kotlinlang.org/docs/reference/extensions.html
 http://kotlinlang.org/docs/reference/data-classes.html
@@ -19,6 +19,7 @@ http://kotlinlang.org/docs/reference/delegation.html
 http://kotlinlang.org/docs/reference/delegated-properties.html
 http://kotlinlang.org/docs/reference/functions.html
 http://kotlinlang.org/docs/reference/lambdas.html
+http://kotlinlang.org/docs/reference/inline-functions.html
 http://kotlinlang.org/docs/reference/multi-declarations.html
 http://kotlinlang.org/docs/reference/ranges.html
 http://kotlinlang.org/docs/reference/typecasts.html
@@ -30,12 +31,13 @@ http://kotlinlang.org/docs/reference/exceptions.html
 http://kotlinlang.org/docs/reference/annotations.html
 http://kotlinlang.org/docs/reference/reflection.html
 http://kotlinlang.org/docs/reference/type-safe-builders.html
-http://kotlinlang.org/docs/reference/inline-functions.html
 http://kotlinlang.org/docs/reference/dynamic-type.html
 http://kotlinlang.org/docs/reference/java-interop.html
+http://kotlinlang.org/docs/reference/kotlin-doc.html
 http://kotlinlang.org/docs/reference/using-maven.html
+http://kotlinlang.org/docs/reference/using-ant.html
+http://kotlinlang.org/docs/reference/using-griffon.html
 http://kotlinlang.org/docs/reference/using-gradle.html
 http://kotlinlang.org/docs/reference/faq.html
 http://kotlinlang.org/docs/reference/comparison-to-java.html
 http://kotlinlang.org/docs/reference/comparison-to-scala.html
-
