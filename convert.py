@@ -6,13 +6,13 @@ import subprocess
 with open("sites.txt") as f:
     sites = f.readlines()
 
-i = 1
-for site in sites:
-    stripped = site.rstrip()
-    if stripped:
-	print "Converting " + stripped
+cleanedSites = [s.rstrip() for s in sites]	
+joinedSites = ' '.join(cleanedSites)
 
-	command = "pandoc -s -r html -t epub3 " + stripped + " -o " + "{0:0=3d}".format(i) + ".epub"
-	p = subprocess.Popen(command, shell=True)
-	p.wait()
-        i += 1
+print("Running pandoc...")
+
+command = "pandoc -s --toc --from=markdown --to=epub3 --output=kotlin.epub title.md " + joinedSites
+p = subprocess.Popen(command, shell=True)
+p.wait()
+
+print("Done. Check kotlin.epub!")

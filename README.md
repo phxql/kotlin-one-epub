@@ -13,4 +13,6 @@ To download the EPub, [click here](https://github.com/phxql/kotlin-one-epub/raw/
 
 ## TODOs
 
-Write a script to merge them together. Currently I'm using Calibre for this. Install the EPubMerge-Plugin (http://www.mobileread.com/forums/showthread.php?t=169744), delete the kotlin.epub file and execute `calibre-debug --run-plugin EpubMerge -- *.epub`. The merged file is called merge.epub.
+1. Write a script to generate the `sites.txt` file.
+1. Write a script to merge them together. Currently I'm using Calibre for this. Install the EPubMerge-Plugin (http://www.mobileread.com/forums/showthread.php?t=169744), delete the kotlin.epub file and execute `calibre-debug --run-plugin EpubMerge -- *.epub`. The merged file is called merge.epub.
+
