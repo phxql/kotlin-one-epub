@@ -9,6 +9,9 @@ import os
 navigation_url = 'https://raw.githubusercontent.com/JetBrains/kotlin-web-site/master/_data/_nav.yml'
 base_url = 'https://raw.githubusercontent.com/JetBrains/kotlin-web-site/master'
 tmp_path = '/tmp/kotlin-one-epub/'
+pandoc_extensions = [
+    "+pipe_tables", "+backtick_code_blocks", "+yaml_metadata_block", "+inline_code_attributes"
+]
 
 print("Fetching navigation...")
 
@@ -47,7 +50,7 @@ for i, url in enumerate(urls):
 print("Running pandoc...")
 
 joined_files = ' '.join(tmp_files)
-command = "pandoc -s --toc --from=markdown --to=epub3 --output=kotlin.epub title.md " + joined_files
+command = "pandoc -s --toc --from=markdown" + ''.join(pandoc_extensions) + " --to=epub3 --output=kotlin.epub title.md " + joined_files
 p = subprocess.Popen(command, shell=True)
 p.wait()
 
