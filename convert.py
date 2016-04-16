@@ -5,9 +5,11 @@ import subprocess
 import yaml
 import urllib2
 import os
+import sys
 
-navigation_url = 'https://raw.githubusercontent.com/JetBrains/kotlin-web-site/master/_data/_nav.yml'
-base_url = 'https://raw.githubusercontent.com/JetBrains/kotlin-web-site/master'
+github_user = 'JetBrains' if len(sys.argv) == 1 else sys.argv[1]
+base_url = "https://raw.githubusercontent.com/{}/kotlin-web-site/master".format(github_user)
+navigation_url = "{}/_data/_nav.yml".format(base_url)
 tmp_path = '/tmp/kotlin-one-epub/'
 pandoc_extensions = [
     "+pipe_tables", "+backtick_code_blocks", "+yaml_metadata_block", "+inline_code_attributes"
