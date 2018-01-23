@@ -22,9 +22,11 @@ response = urllib2.urlopen(navigation_url).read()
 
 print("Parsing navigation...")
 navigation = yaml.safe_load(response)
-reference = navigation['reference']['items']
+reference = navigation['reference']['content']
+# Exclude 'Reference' and 'Core Libraries' section
+excludes = ['Reference','Core Libraries']
 # Access content
-content = [r['items'] for r in reference if r['title'] != 'Reference'] # Exclude 'Reference' section
+content = [r['content'] for r in reference if r['title'] not in excludes]
 # Flatmap list of lists
 content = reduce(list.__add__, content)
 # Extract first key of dictionary
