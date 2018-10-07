@@ -26,7 +26,8 @@ reference = navigation['reference']['content']
 # Exclude 'Reference' and 'Core Libraries' section
 excludes = ['Reference','Core Libraries']
 # Access content
-content = [r['content'] for r in reference if r['title'] not in excludes]
+content = [r for r in reference if r['title'] not in excludes]
+content = [r['content'] for r in content if r.has_key('content')]
 # Flatmap list of lists
 content = reduce(list.__add__, content)
 # Extract first key of dictionary
