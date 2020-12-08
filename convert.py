@@ -28,9 +28,9 @@ reference = navigation['reference']['content']
 excludes = ['Reference', 'Core Libraries', "What's New", 'Releases and Roadmap']
 # Access content
 content = [r for r in reference if r['title'] not in excludes]
-content = [r['content'] for r in content if r.contains('content')]
+content = [r['content'] for r in content if r.__contains__('content')]
 # Flatmap list of lists
-content = reduce(list.add, content)
+content = reduce(list.__add__, content)
 # Extract first key of dictionary
 urls = [c['url'] for c in content]
 # Add base url and use markdown file
