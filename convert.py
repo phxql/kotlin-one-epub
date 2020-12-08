@@ -25,12 +25,12 @@ print("Parsing navigation...")
 navigation = yaml.safe_load(response)
 reference = navigation['reference']['content']
 # Exclude 'Reference' and 'Core Libraries' section
-excludes = ['Reference','Core Libraries']
+excludes = ['Reference', 'Core Libraries', "What's New", 'Releases and Roadmap']
 # Access content
 content = [r for r in reference if r['title'] not in excludes]
-content = [r['content'] for r in content if r.__contains__('content')]
+content = [r['content'] for r in content if r.contains('content')]
 # Flatmap list of lists
-content = reduce(list.__add__, content)
+content = reduce(list.add, content)
 # Extract first key of dictionary
 urls = [c['url'] for c in content]
 # Add base url and use markdown file
