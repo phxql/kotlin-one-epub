@@ -3,9 +3,10 @@
 
 import subprocess
 import yaml
-import urllib2
+import urllib.request
 import os
 import sys
+from functools import reduce
 
 github_user = 'JetBrains' if len(sys.argv) == 1 else sys.argv[1]
 base_url = "https://raw.githubusercontent.com/{}/kotlin-web-site/master".format(github_user)
@@ -18,7 +19,7 @@ pandoc_extensions = [
 
 print("Fetching navigation...")
 
-response = urllib2.urlopen(navigation_url).read()
+response = urllib.request.urlopen(navigation_url).read()
 
 print("Parsing navigation...")
 navigation = yaml.safe_load(response)
@@ -27,7 +28,7 @@ reference = navigation['reference']['content']
 excludes = ['Reference','Core Libraries']
 # Access content
 content = [r for r in reference if r['title'] not in excludes]
-content = [r['content'] for r in content if r.has_key('content')]
+content = [r['content'] for r in content if r.__contains__('content')]
 # Flatmap list of lists
 content = reduce(list.__add__, content)
 # Extract first key of dictionary
@@ -42,9 +43,10 @@ if not os.path.exists(tmp_path):
 tmp_files = []
 for i, url in enumerate(urls):
     print("Downloading " + url + "...")
-    url_content = urllib2.urlopen(reference_url + url).read()
+    print(reference_url + url)
+    url_content = urllib.request.urlopen(url).read()
     # Remove strange words from the content
-    url_content = url_content.replace("{: .keyword }", "")
+    url_content = url_content.decode().replace("{: .keyword }", "")
 
     filename = tmp_path + str(i) + ".md"
     tmp_file = open(filename, 'w')

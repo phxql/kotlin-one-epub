@@ -4,7 +4,7 @@ Small python script to create one epub file from the [Kotlin reference](http://k
 
 ## Download
 
-To download the EPub, [click here](https://github.com/phxql/kotlin-one-epub/raw/master/kotlin.epub?raw=true)
+To download the EPub, [click here](https://github.com/SubhrajyotiSen/kotlin-one-epub/blob/master/kotlin.epub?raw=true)
 
 ## Run it yourself
 
